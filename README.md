@@ -23,6 +23,7 @@ The project direction is to move beyond a single Gibson-focused decoder into a d
 
 - `serial-analyzer-roadmap.md`: product and implementation roadmap.
 - `brand-research-slice-001.md`: first source-backed brand research slice.
+- `brand-research-slice-002-amg.md`: AMG-focused research for Fender, PRS, Martin, Novo, and Collings.
 - `interaction-summary.md`: current Gibson decoder findings.
 - `test-matrix.md`: Gibson-focused test matrix.
 
