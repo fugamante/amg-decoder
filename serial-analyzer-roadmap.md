@@ -1,10 +1,10 @@
-# Serial Analyzer Roadmap
+# AMG Decoder Roadmap
 
 Date: 2026-05-27
 
 ## Product Direction
 
-Expand the current Gibson-focused decoder into a broader guitar serial analyzer with a deterministic brand-first interface.
+Expand the current Gibson-focused decoder into AMG Decoder: a broader American-made guitar serial analyzer with a deterministic brand-first interface.
 
 The product should not start with a universal free-form decoder. Serial systems vary too much by brand, factory, period, and instrument line. The primary user path should be:
 

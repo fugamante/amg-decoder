@@ -1,6 +1,6 @@
-# Guitar Serial Analyzer
+# AMG Decoder
 
-A planning workspace for a brand-first guitar serial analyzer.
+A planning workspace for a brand-first American-made guitar serial analyzer.
 
 The project direction is to move beyond a single Gibson-focused decoder into a deterministic analyzer organized by brand. Users should choose a brand first, enter only the fields that matter for that brand, and receive a structured result with confidence, matched rule, warnings, and source attribution.
 
@@ -9,6 +9,7 @@ The project direction is to move beyond a single Gibson-focused decoder into a d
 - Gibson Custom Shop rule notes and test matrix.
 - Product roadmap for a broader serial analyzer.
 - First research slice for major electric and acoustic guitar brands.
+- Research direction for American-made brands including Fender, PRS, Martin, Novo, and Collings.
 
 ## Product Principles
 

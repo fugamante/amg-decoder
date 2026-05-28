@@ -2,7 +2,7 @@
 
 Date: 2026-05-27
 
-Purpose: identify which guitar brands are good candidates for the first expansion of the Gibson decoder into a brand-first serial analyzer.
+Purpose: identify which guitar brands are good candidates for the first expansion of the Gibson decoder into AMG Decoder, a brand-first serial analyzer.
 
 Research rule: prefer official manufacturer support pages. Use community or third-party references only as lower-confidence leads, not as production rules without follow-up verification.
 
