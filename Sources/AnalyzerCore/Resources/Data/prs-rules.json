@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "brand": "PRS",
+  "source_id": "prs_year_identification",
+  "last_reviewed": "2026-06-23",
+  "implemented_scope": "set_neck_and_s2",
+  "prefix_years": {
+    "0": [1990, 2000],
+    "1": [1991, 2001],
+    "2": [1992, 2002],
+    "3": [1993, 2003],
+    "4": [1994, 2004],
+    "5": [1985, 1995, 2005],
+    "6": [1986, 1996, 2006],
+    "7": [1987, 1997, 2007],
+    "8": [1988, 1998],
+    "9": [1989, 1999],
+    "08": [2008],
+    "09": [2009],
+    "10": [2010],
+    "11": [2011],
+    "12": [2012],
+    "13": [2013],
+    "14": [2014],
+    "15": [2015],
+    "16": [2016],
+    "17": [2017],
+    "18": [2018],
+    "19": [2019],
+    "20": [2020],
+    "21": [2021],
+    "22": [2022],
+    "23": [2023],
+    "24": [2024]
+  },
+  "rules": [
+    {
+      "id": "prs.set_neck.approximate_ranges",
+      "label": "PRS set-neck approximate serial ranges",
+      "format": "year_prefix_plus_sequence",
+      "serial_location": "Back of the guitar headstock",
+      "ranges": [
+        { "year": 1985, "range_start": 1, "range_end": 400 },
+        { "year": 1986, "range_start": 401, "range_end": 1700 },
+        { "year": 1987, "range_start": 1701, "range_end": 3500 },
+        { "year": 1988, "range_start": 3501, "range_end": 5400 },
+        { "year": 1989, "range_start": 5401, "range_end": 7600 },
+        { "year": 1990, "range_start": 7601, "range_end": 10100 },
+        { "year": 1991, "range_start": 10101, "range_end": 12600 },
+        { "year": 1992, "range_start": 12601, "range_end": 15000 },
+        { "year": 1993, "range_start": 15001, "range_end": 17900 },
+        { "year": 1994, "range_start": 17901, "range_end": 20900 },
+        { "year": 1995, "range_start": 20901, "range_end": 24600 },
+        { "year": 1996, "range_start": 24601, "range_end": 29500 },
+        { "year": 1997, "range_start": 29501, "range_end": 34600 },
+        { "year": 1998, "range_start": 34601, "range_end": 39100 },
+        { "year": 1999, "range_start": 39101, "range_end": 44499 },
+        { "year": 2000, "range_start": 44500, "range_end": 52199 },
+        { "year": 2001, "range_start": 52200, "range_end": 62199 },
+        { "year": 2002, "range_start": 62200, "range_end": 72353 },
+        { "year": 2003, "range_start": 72354, "range_end": 82254 },
+        { "year": 2004, "range_start": 82255, "range_end": 92555 },
+        { "year": 2005, "range_start": 92556, "range_end": 103103 },
+        { "year": 2006, "range_start": 103104, "range_end": 114940 },
+        { "year": 2007, "range_start": 114941, "range_end": 132401 },
+        { "year": 2008, "range_start": 132402, "range_end": 146419 },
+        { "year": 2009, "range_start": 146420, "range_end": 159132 },
+        { "year": 2010, "range_start": 159133, "range_end": 170591 },
+        { "year": 2011, "range_start": 170592, "range_end": 183862 },
+        { "year": 2012, "range_start": 183863, "range_end": 196410 },
+        { "year": 2013, "range_start": 196411, "range_end": 206059 },
+        { "year": 2014, "range_start": 206060, "range_end": 215491 },
+        { "year": 2015, "range_start": 215492, "range_end": 224954 },
+        { "year": 2016, "range_start": 224955, "range_end": 236147 },
+        { "year": 2017, "range_start": 236148, "range_end": 248633 },
+        { "year": 2018, "range_start": 248634, "range_end": 271078 },
+        { "year": 2019, "range_start": 271079, "range_end": 298384 },
+        { "year": 2020, "range_start": 298385, "range_end": 315748 },
+        { "year": 2021, "range_start": 315749, "range_end": 340165 },
+        { "year": 2022, "range_start": 340166, "range_end": 354905 },
+        { "year": 2024, "range_start": 375043, "range_end": 397950 }
+      ],
+      "quarantines": [
+        {
+          "id": "prs.set_neck.2023_authority_anomaly",
+          "year": 2023,
+          "status": "unsupported",
+          "official_range_text": "035906 - 363798",
+          "reason": "Official PRS set-neck 2023 row appears inconsistent with adjacent 2022 and 2024 sequence ranges; keep unsupported until clarified by authority evidence."
+        }
+      ],
+      "decoded_fields": [
+        "production_year",
+        "prefix",
+        "sequence",
+        "range_start",
+        "range_end",
+        "serial_location"
+      ]
+    },
+    {
+      "id": "prs.s2.approximate_ranges",
+      "label": "PRS S2 approximate serial ranges",
+      "format": "s2_prefix_plus_sequence",
+      "serial_location": "Back of the guitar headstock",
+      "ranges": [
+        { "year": 2013, "range_start": 2000001, "range_end": 2003820 },
+        { "year": 2014, "range_start": 2003821, "range_end": 2010529 },
+        { "year": 2015, "range_start": 2010530, "range_end": 2017390 },
+        { "year": 2016, "range_start": 2017391, "range_end": 2023214 },
+        { "year": 2017, "range_start": 2023215, "range_end": 2027902 },
+        { "year": 2018, "range_start": 2027903, "range_end": 2036779 },
+        { "year": 2019, "range_start": 2036780, "range_end": 2043718 },
+        { "year": 2020, "range_start": 2043720, "range_end": 2049421 },
+        { "year": 2021, "range_start": 2049422, "range_end": 2059387 },
+        { "year": 2022, "range_start": 2059388, "range_end": 2065338 },
+        { "year": 2023, "range_start": 2065339, "range_end": 2067488 },
+        { "year": 2024, "range_start": 2071820, "range_end": 2078569 }
+      ],
+      "quarantines": [
+        {
+          "id": "prs.s2.2019_2020_overlap",
+          "serial": "S2043719",
+          "status": "unsupported",
+          "official_range_text": "S2036780 - S2043719 2019; S2043719 - S2049421 2020",
+          "reason": "Official PRS S2 table assigns S2043719 to both 2019 and 2020 ranges; keep unsupported until clarified by authority evidence."
+        }
+      ],
+      "decoded_fields": [
+        "production_year",
+        "family",
+        "serial_number",
+        "range_start",
+        "range_end",
+        "serial_location"
+      ]
+    }
+  ],
+  "warnings": [
+    "PRS serial ranges are approximate production-year ranges from the official PRS year-identification page.",
+    "This PRS module only covers set-neck and S2 models; CE, SE, EG, Swamp Ash Special, bass, acoustic, amplifier, and cabinet serials need separate family-specific rules.",
+    "Serial lookup does not authenticate an instrument or identify its exact model."
+  ]
+}

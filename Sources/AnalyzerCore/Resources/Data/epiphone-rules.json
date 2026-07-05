@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "brand": "Epiphone",
+  "source_id": "gibson_epiphone_serial_search",
+  "last_reviewed": "2026-06-26",
+  "implemented_scope": "gibson_documented_epiphone_guitar_formats",
+  "rules": [
+    {
+      "id": "epiphone.regular_production.pre_2008.factory_yymm_rank",
+      "label": "Epiphone regular production pre-2008 factory/date format",
+      "format": "FYYMMRRRR or FYYMRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["production_year", "production_month", "factory_code", "rank"]
+    },
+    {
+      "id": "epiphone.elite_elitist.fyssss",
+      "label": "Epiphone Elite/Elitist serial format",
+      "format": "FYSSSS",
+      "confidence": "medium",
+      "decoded_fields": ["production_year", "factory_code", "series_hint", "sequence"]
+    },
+    {
+      "id": "epiphone.numeric_2008_present.yymmrrrrrr",
+      "label": "Epiphone numeric serial format around 2008-present",
+      "format": "YYMMRRRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["production_year", "production_month", "rank"]
+    }
+  ],
+  "warnings": [
+    "Epiphone serial lookup describes Gibson-documented serial-format facts and does not authenticate an instrument.",
+    "Factory code letters are returned as codes only; this module does not identify exact factory names from community mappings.",
+    "Dobro, banjo, and undocumented Epiphone exception formats are not enabled in this module."
+  ]
+}

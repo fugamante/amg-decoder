@@ -1,0 +1,25 @@
+{
+  "name": "amg-decoder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dry-run:release:metadata": "node scripts/dry_run_release_metadata_application.mjs",
+    "test": "node scripts/test_martin_analyzer.mjs && node scripts/test_taylor_analyzer.mjs && node scripts/test_prs_analyzer.mjs && node scripts/test_gibson_analyzer.mjs && node scripts/test_fender_analyzer.mjs && node scripts/test_epiphone_analyzer.mjs && node scripts/test_collings_analyzer.mjs && node scripts/test_static_ui.mjs && node scripts/test_active_surface_contract.mjs && node scripts/test_native_ui_contract.mjs && node scripts/test_apple_packaging_contract.mjs && node scripts/test_macos_ui_contract.mjs && node scripts/test_xcode_project_contract.mjs && node scripts/test_xcode_readiness_contract.mjs && node scripts/test_simulator_smoke_contract.mjs && node scripts/test_simulator_ui_contract.mjs && node scripts/test_apple_release_contract.mjs && npm run test:release:intake && npm run test:release:dry-run && npm run test:release:assets && npm run test:release:readiness && python3 scripts/validate_data.py && npm run test:browser",
+    "test:browser": "node scripts/test_browser_ui.mjs",
+    "test:macos:ui": "script/check_macos_ui.sh",
+    "test:release:assets": "node scripts/test_final_asset_acceptance_contract.mjs",
+    "test:release:dry-run": "node scripts/test_release_metadata_dry_run_contract.mjs && npm run dry-run:release:metadata",
+    "test:release:intake": "node scripts/test_release_metadata_intake_contract.mjs",
+    "test:release:readiness": "node scripts/check_apple_release_readiness.mjs",
+    "test:simulator": "script/check_simulator_smoke.sh",
+    "test:simulator:iphone:ui": "script/check_simulator_iphone_ui.sh",
+    "test:simulator:ui": "script/check_simulator_ui.sh",
+    "test:xcode": "script/check_xcode_readiness.sh",
+    "serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "axe-core": "^4.12.1",
+    "playwright": "^1.61.1"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "description": "Shared descriptive-only analyzer result contract for AMG Decoder fixtures and brand modules.",
+  "required_top_level_fields": [
+    "brand",
+    "input",
+    "confidence",
+    "matched_rule",
+    "decoded",
+    "warnings",
+    "sources"
+  ],
+  "confidence_values": [
+    "high",
+    "medium",
+    "low",
+    "unsupported"
+  ],
+  "matched_rule": {
+    "required_fields": [
+      "id",
+      "label"
+    ],
+    "stability": "Rule IDs are stable automation contract keys. Rename only with a migration note."
+  },
+  "sources": {
+    "required_fields": [
+      "id",
+      "name",
+      "url",
+      "source_tier"
+    ],
+    "allowed_source_tiers": [
+      "official",
+      "manufacturer_adjacent",
+      "community",
+      "unverified"
+    ]
+  },
+  "prohibited_claims": [
+    "authentication",
+    "legal conclusion",
+    "zoning conclusion",
+    "financial conclusion",
+    "ranking",
+    "recommendation",
+    "invented coordinates",
+    "unsupported institution facts"
+  ]
+}

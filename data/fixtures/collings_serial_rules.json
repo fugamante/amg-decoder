@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "brand": "Collings",
+  "source_id": "collings_faq_serial_numbers",
+  "cases": [
+    {
+      "id": "collings_electric_290_official_example",
+      "input": { "serial": "290181443" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "collings.electric.prefix_yy_sequence",
+        "decoded": {
+          "production_year": 2018,
+          "model_hint": "290",
+          "sequence": 1443
+        }
+      }
+    },
+    {
+      "id": "collings_electric_i35lc_official_example",
+      "input": { "serial": "I35LC232197" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "collings.electric.prefix_yy_sequence",
+        "decoded": {
+          "production_year": 2023,
+          "model_hint": "I35LC",
+          "sequence": 2197
+        }
+      }
+    },
+    {
+      "id": "collings_electric_accept_spacing",
+      "input": { "serial": " i35 lc 232197 " },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "collings.electric.prefix_yy_sequence",
+        "decoded": {
+          "production_year": 2023,
+          "model_hint": "I35LC",
+          "sequence": 2197
+        }
+      }
+    },
+    {
+      "id": "collings_acoustic_numeric_guidance",
+      "input": { "serial": "12345" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "collings.acoustic.records_assisted",
+        "decoded": {
+          "serial_location": "Neck block",
+          "required_context": "Contact Collings with the serial number for exact acoustic ship-date records."
+        }
+      }
+    },
+    {
+      "id": "collings_reject_empty",
+      "input": { "serial": "" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "collings_reject_unknown_prefix",
+      "input": { "serial": "ABC232197" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    }
+  ]
+}

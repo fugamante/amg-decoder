@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "brand": "Taylor",
+  "source_id": "taylor_serial_decode",
+  "last_reviewed": "2026-06-23",
+  "rules": [
+    {
+      "id": "taylor.current_10_digit.2009_present",
+      "label": "Taylor current 10-digit serial format",
+      "format": "10_digit",
+      "start_date": "2009-11-01",
+      "factory_codes": {
+        "1": "El Cajon, California, USA",
+        "2": "Tecate, Baja California, Mexico"
+      },
+      "decoded_fields": [
+        "factory",
+        "start_date",
+        "sequence"
+      ]
+    },
+    {
+      "id": "taylor.nine_digit.1993_1999",
+      "label": "Taylor 9-digit serial format",
+      "format": "9_digit",
+      "year_start": 1993,
+      "year_end": 1999,
+      "decoded_fields": [
+        "start_date",
+        "series",
+        "sequence"
+      ]
+    },
+    {
+      "id": "taylor.eleven_digit.2000_2009",
+      "label": "Taylor 11-digit serial format",
+      "format": "11_digit",
+      "start_date": "2000-01-01",
+      "end_date": "2009-10-31",
+      "decoded_fields": [
+        "start_date",
+        "series",
+        "sequence"
+      ]
+    },
+    {
+      "id": "taylor.four_prefix_410.1991_1992",
+      "label": "Taylor 410 4-prefix serial format",
+      "format": "4_prefix",
+      "ranges": [
+        { "year": 1991, "range_start": 1, "range_end": 1121 },
+        { "year": 1992, "range_start": 1122, "range_end": 3152 }
+      ],
+      "decoded_fields": [
+        "production_year",
+        "sequence"
+      ]
+    },
+    {
+      "id": "taylor.pre_1993_ranges",
+      "label": "Taylor pre-1993 published serial ranges",
+      "format": "numeric_range",
+      "ranges": [
+        { "year": 1975, "range_start": 108, "range_end": 108 },
+        { "year": 1975, "range_start": 10109, "range_end": 10146 },
+        { "year": 1976, "range_start": 20147, "range_end": 20315 },
+        { "year": 1978, "range_start": 451, "range_end": 900 },
+        { "year": 1979, "range_start": 901, "range_end": 1300 },
+        { "year": 1980, "range_start": 1301, "range_end": 1400 },
+        { "year": 1981, "range_start": 1401, "range_end": 1670 },
+        { "year": 1982, "range_start": 1671, "range_end": 1951 },
+        { "year": 1983, "range_start": 1952, "range_end": 2445 },
+        { "year": 1984, "range_start": 2446, "range_end": 3206 },
+        { "year": 1985, "range_start": 3207, "range_end": 3888 },
+        { "year": 1986, "range_start": 3889, "range_end": 4778 },
+        { "year": 1987, "range_start": 4779, "range_end": 5981 },
+        { "year": 1988, "range_start": 5982, "range_end": 7831 },
+        { "year": 1989, "range_start": 7832, "range_end": 10070 },
+        { "year": 1990, "range_start": 10071, "range_end": 12497 },
+        { "year": 1991, "range_start": 12498, "range_end": 15249 },
+        { "year": 1992, "range_start": 15250, "range_end": 17947 }
+      ],
+      "exclusions": [
+        {
+          "id": "taylor.pre_1993_transition_1977",
+          "status": "unsupported",
+          "reason": "The official 1977 row describes a mid-year switch from five-digit to three-digit serials and is not encoded until row-level boundaries are represented without ambiguity."
+        }
+      ],
+      "decoded_fields": [
+        "production_year",
+        "range_start",
+        "range_end"
+      ]
+    }
+  ],
+  "series_codes": {
+    "0": "300 or 400 Series",
+    "1": "500 through Presentation Series",
+    "2": "200 Series",
+    "3": "Baby or Big Baby",
+    "4": "Big Baby",
+    "5": "T5",
+    "6": "T3",
+    "7": "Nylon Series",
+    "8": "100 Series",
+    "9": "SolidBody Series"
+  },
+  "warnings": [
+    "Serial lookup describes Taylor production or work-start facts from official serial rules; it does not authenticate an instrument.",
+    "Series code labels are format hints from Taylor's serial documentation, not exact model identification.",
+    "Taylor notes early record keeping was spotty for the oldest instruments."
+  ]
+}

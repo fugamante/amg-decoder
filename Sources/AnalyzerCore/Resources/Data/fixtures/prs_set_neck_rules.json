@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "brand": "PRS",
+  "source_id": "prs_year_identification",
+  "cases": [
+    {
+      "id": "prs_set_neck_1985_lower_boundary",
+      "input": { "serial": "50001" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.set_neck.approximate_ranges",
+        "decoded": {
+          "production_year": 1985,
+          "prefix": "5",
+          "sequence": 1,
+          "range_start": 1,
+          "range_end": 400,
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_set_neck_2005_prefix_disambiguated",
+      "input": { "serial": "592556" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.set_neck.approximate_ranges",
+        "decoded": {
+          "production_year": 2005,
+          "prefix": "5",
+          "sequence": 92556,
+          "range_start": 92556,
+          "range_end": 103103,
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_set_neck_2018_two_digit_prefix",
+      "input": { "serial": "18248634" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.set_neck.approximate_ranges",
+        "decoded": {
+          "production_year": 2018,
+          "prefix": "18",
+          "sequence": 248634,
+          "range_start": 248634,
+          "range_end": 271078,
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_set_neck_2024_lower_boundary",
+      "input": { "serial": "24375043" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.set_neck.approximate_ranges",
+        "decoded": {
+          "production_year": 2024,
+          "prefix": "24",
+          "sequence": 375043,
+          "range_start": 375043,
+          "range_end": 397950,
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_set_neck_2023_quarantine",
+      "input": { "serial": "2335906" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "prs.set_neck.2023_authority_anomaly",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "prs_set_neck_reject_prefix_sequence_mismatch",
+      "input": { "serial": "24200000" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "prs.set_neck.approximate_ranges",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "prs_set_neck_reject_empty",
+      "input": { "serial": "" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "prs_set_neck_reject_non_digits",
+      "input": { "serial": "CE20750" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "prs_s2_2013_lower_boundary",
+      "input": { "serial": "S2000001" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.s2.approximate_ranges",
+        "decoded": {
+          "production_year": 2013,
+          "family": "S2",
+          "serial_number": "S2000001",
+          "range_start": "S2000001",
+          "range_end": "S2003820",
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_s2_2024_lower_boundary",
+      "input": { "serial": "S2071820" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "prs.s2.approximate_ranges",
+        "decoded": {
+          "production_year": 2024,
+          "family": "S2",
+          "serial_number": "S2071820",
+          "range_start": "S2071820",
+          "range_end": "S2078569",
+          "serial_location": "Back of the guitar headstock"
+        }
+      }
+    },
+    {
+      "id": "prs_s2_overlap_quarantine",
+      "input": { "serial": "S2043719" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "prs.s2.2019_2020_overlap",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "prs_s2_reject_unmatched",
+      "input": { "serial": "S2099999" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "prs.s2.approximate_ranges",
+        "decoded": {}
+      }
+    }
+  ]
+}

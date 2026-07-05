@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "product_name": "AMG Decoder",
+  "active_brands": [
+    {
+      "id": "martin",
+      "display_name": "Martin",
+      "status": "Implemented",
+      "data_path": "data/brands/martin/ranges.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "taylor",
+      "display_name": "Taylor",
+      "status": "Implemented",
+      "data_path": "data/brands/taylor/rules.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "prs",
+      "display_name": "PRS",
+      "status": "Set-neck + S2",
+      "data_path": "data/brands/prs/rules.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "gibson",
+      "display_name": "Gibson",
+      "status": "Scoped official",
+      "data_path": "data/brands/gibson/rules.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "fender",
+      "display_name": "Fender",
+      "status": "U.S. + Mexico + Indonesia + Japan context",
+      "data_path": "data/brands/fender/rules.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "epiphone",
+      "display_name": "Epiphone",
+      "status": "Scoped official",
+      "data_path": "data/brands/epiphone/rules.json",
+      "surface": "analyzer"
+    },
+    {
+      "id": "collings",
+      "display_name": "Collings",
+      "status": "Electric + acoustic",
+      "data_path": "data/brands/collings/rules.json",
+      "surface": "analyzer"
+    }
+  ],
+  "excluded_brands": [
+    {
+      "id": "suhr",
+      "display_name": "Suhr",
+      "status": "retired",
+      "reason": "Provenance-only source registry entry; no reviewed official public serial-decoding rule."
+    },
+    {
+      "id": "novo",
+      "display_name": "Novo",
+      "status": "retired",
+      "reason": "Provenance-only source registry entry; no reviewed official public serial-decoding rule."
+    }
+  ]
+}

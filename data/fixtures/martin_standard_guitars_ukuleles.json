@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "brand": "Martin",
+  "rule_id": "martin.standard_guitars_ukuleles.1898_2025",
+  "source_id": "martin_serial_lookup",
+  "cases": [
+    {
+      "id": "martin_first_supported_serial",
+      "input": { "serial": "1" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 1898, "range_start": 1, "range_end": 8348 },
+        "warnings": [
+          "Serial lookup returns a production year by official range, not an exact build date.",
+          "Serial lookup does not authenticate an instrument or identify its model."
+        ]
+      }
+    },
+    {
+      "id": "martin_1898_upper_boundary",
+      "input": { "serial": "8348" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 1898, "range_start": 1, "range_end": 8348 }
+      }
+    },
+    {
+      "id": "martin_1899_lower_boundary",
+      "input": { "serial": "8349" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 1899, "range_start": 8349, "range_end": 8716 }
+      }
+    },
+    {
+      "id": "martin_2001_upper_boundary",
+      "input": { "serial": "845644" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 2001, "range_start": 780501, "range_end": 845644 }
+      }
+    },
+    {
+      "id": "martin_2002_non_quarantined_lower_boundary",
+      "input": { "serial": "845645" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 2002, "range_start": 845645, "range_end": 916759 }
+      }
+    },
+    {
+      "id": "martin_sigma_quarantine_lower_boundary",
+      "input": { "serial": "900001" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "martin.sigma_martin_1981_1982",
+        "decoded": {},
+        "warnings": [
+          "Official Martin lookup excludes serials 900001 through 902908 from the 2002 guitar/ukulele range because they were used on Sigma-Martins in 1981-1982."
+        ]
+      }
+    },
+    {
+      "id": "martin_sigma_quarantine_upper_boundary",
+      "input": { "serial": "902908" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "martin.sigma_martin_1981_1982",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "martin_after_sigma_quarantine",
+      "input": { "serial": "902909" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 2002, "range_start": 845645, "range_end": 916759 }
+      }
+    },
+    {
+      "id": "martin_2025_upper_boundary",
+      "input": { "serial": "3043480" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": { "production_year": 2025, "range_start": 2935988, "range_end": 3043480 }
+      }
+    },
+    {
+      "id": "martin_above_current_authority",
+      "input": { "serial": "3043481" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "martin.standard_guitars_ukuleles.1898_2025",
+        "decoded": {},
+        "warnings": [
+          "Serial is above the current official Martin guitar/ukulele table reviewed on 2026-06-23."
+        ]
+      }
+    },
+    {
+      "id": "martin_reject_empty",
+      "input": { "serial": "" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {},
+        "warnings": [ "Serial is required and must contain digits only." ]
+      }
+    },
+    {
+      "id": "martin_reject_non_digits",
+      "input": { "serial": "2935987A" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {},
+        "warnings": [ "Serial is required and must contain digits only." ]
+      }
+    }
+  ]
+}

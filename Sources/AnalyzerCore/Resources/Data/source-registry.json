@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "last_reviewed": "2026-06-26",
+  "sources": [
+    {
+      "id": "martin_serial_lookup",
+      "name": "C. F. Martin & Co. Serial/Date Lookup",
+      "publisher": "C. F. Martin & Co.",
+      "url": "https://www.martinguitar.com/support-serial-number-lookup.html",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-23",
+      "use": "Authority for Martin guitar and ukulele year-to-last-serial production-year ranges.",
+      "scope_notes": [
+        "Use only the Guitars & Ukuleles table for the standard Martin range dataset.",
+        "The official page has separate Little Martin, Backpacker, mandolin, solid wood ukulele, and HPL ukulele tables; those are excluded from this dataset until separate instrument-family rules exist.",
+        "The official page notes serials 900001 through 902908 are excluded from the 2002 guitar/ukulele range because they were used on Sigma-Martins in 1981-1982."
+      ],
+      "product_boundary": [
+        "May support descriptive production-year lookup by official serial range.",
+        "Must not claim authentication, model identity, legal status, valuation, or exact build date from serial number alone."
+      ]
+    },
+    {
+      "id": "taylor_serial_decode",
+      "name": "Decoding a Taylor Guitar's Serial #",
+      "publisher": "Taylor Guitars",
+      "url": "https://www.taylorguitars.com/support/general/decoding-taylor-guitars-serial",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-23",
+      "use": "Authority for Taylor 10-digit, 9-digit, 11-digit, 4-prefix, and published pre-1993 serial decoding rules.",
+      "scope_notes": [
+        "Current 10-digit serials started in November 2009 and identify factory, start date, and daily production sequence.",
+        "9-digit serials apply from 1993 through 1999.",
+        "11-digit serials apply from January 2000 through October 2009.",
+        "4-prefix serials apply only to the early 410 model numbering system for 1991 and 1992.",
+        "Published older ranges before 1993 are range-based and Taylor notes early record keeping was spotty."
+      ],
+      "product_boundary": [
+        "May support descriptive Taylor production/start-date lookup by official serial format.",
+        "Must not claim authentication, legal status, valuation, exact model identity, or repair/warranty eligibility from serial number alone."
+      ]
+    },
+    {
+      "id": "prs_year_identification",
+      "name": "PRS Guitars Year Identification",
+      "publisher": "PRS Guitars",
+      "url": "https://support.prsguitars.com/hc/en-us/articles/4408314427547-Year-Identification",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-23",
+      "use": "Authority for PRS year-code prefixes, set-neck serial number ranges, and S2 serial number ranges.",
+      "scope_notes": [
+        "The first AMG Decoder PRS implementation covers set-neck and S2 model serial ranges only.",
+        "PRS documents many additional families, including CE, EG, Swamp Ash Special, bass, SE, acoustics, amplifiers, and cabinets; those require separate family-specific flows.",
+        "The official 2023 set-neck row appears anomalous relative to adjacent ranges and is quarantined until clarified by authority evidence.",
+        "The official S2 boundary serial S2043719 appears in both 2019 and 2020 rows and is quarantined until clarified by authority evidence."
+      ],
+      "product_boundary": [
+        "May support descriptive PRS set-neck and S2 approximate production-year lookup by official prefix or family sequence range.",
+        "Must not claim authentication, exact model identity, valuation, or family identity beyond the user-selected scoped rule."
+      ]
+    },
+    {
+      "id": "gibson_serial_search",
+      "name": "Gibson Serial Numbers",
+      "publisher": "Gibson Brands, Inc.",
+      "url": "https://www.gibson.com/pages/serial-number-search",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-23",
+      "use": "Authority for scoped Gibson USA, Gibson Acoustic, Gibson Memphis, Gibson Custom, Les Paul Classic, and selected reissue serial-number formats.",
+      "scope_notes": [
+        "Use only Gibson guitar serial formats documented on the official Gibson serial-number page.",
+        "Artist signature models are excluded because Gibson says they often deviate and directs users to contact Gibson.",
+        "Epiphone guitar formats are implemented as a separate scoped brand because Gibson documents them on the same source page.",
+        "Dobro and banjo formats are excluded until separate brand/family flows exist.",
+        "Custom Shop last-digit year formats expose only a production-year digit unless additional authority resolves the decade."
+      ],
+      "product_boundary": [
+        "May support descriptive production-year, production-year digit, day-of-year, sequence, batch, and documented family hints from official Gibson formats.",
+        "Must not claim authentication, valuation, ownership, legal status, exact model identity, or a full Custom Shop year when Gibson only documents a last digit."
+      ]
+    },
+    {
+      "id": "gibson_epiphone_serial_search",
+      "name": "Gibson Serial Numbers: Epiphone section",
+      "publisher": "Gibson Brands, Inc.",
+      "url": "https://www.gibson.com/pages/serial-number-search",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-26",
+      "use": "Authority for scoped Epiphone guitar serial formats documented by Gibson.",
+      "scope_notes": [
+        "Use only Epiphone guitar formats documented on Gibson's official serial-number page.",
+        "Factory code letters are returned as codes only; community factory-code name mappings are not encoded.",
+        "Dobro, banjo, and undocumented Epiphone exceptions are excluded until separate source-backed flows exist."
+      ],
+      "product_boundary": [
+        "May support descriptive Epiphone production-year/month, factory-code, model-tier hint, and rank parsing from official Gibson-documented formats.",
+        "Must not claim authentication, exact factory identity, valuation, ownership, legal status, or exact model identity."
+      ]
+    },
+    {
+      "id": "fender_us_product_dating",
+      "name": "How can I find out when my American-made instrument was manufactured?",
+      "publisher": "Fender Musical Instruments Corporation",
+      "url": "https://support.fender.com/hc/en-us/articles/42521696369947-How-can-I-find-out-when-my-American-made-instrument-was-manufactured",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-25",
+      "use": "Authority for U.S.-made Fender instrument serial dating ranges and modern US-prefix decoding.",
+      "scope_notes": [
+        "Use only American-made Fender instrument serial schemes from the official Fender support article.",
+        "The official page warns that serial numbers overlap and are not precisely definitive because of modular production.",
+        "American Vintage V-prefix serials can identify a U.S. Vintage/American Vintage candidate, but Fender says a specific year requires checking the neck heel production date.",
+        "Special-run, export, Custom Shop, Japan, Korea, Indonesia, acoustic, amplifier, and non-U.S. serials are excluded from this U.S. authority entry."
+      ],
+      "product_boundary": [
+        "May support approximate U.S.-made Fender production-year or production-year-range lookup by official serial pattern.",
+        "Must not claim authentication, valuation, exact production date, country of origin beyond the scoped U.S.-made rule, or exact model identity."
+      ]
+    },
+    {
+      "id": "fender_mexico_product_dating",
+      "name": "How can I find out when my Mexican-made instrument was manufactured?",
+      "publisher": "Fender Musical Instruments Corporation",
+      "url": "https://support.fender.com/hc/en-us/articles/42521694811931-How-can-I-find-out-when-my-Mexican-made-instrument-was-manufactured",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-27",
+      "use": "Authority for Mexican-made Fender instrument MN, MZ, and MX prefix production-date ranges.",
+      "scope_notes": [
+        "Use only the MN0-MN9, MZ0-MZ9, and MX10-MX17 serial formats explicitly charted on Fender's Mexican-made support article.",
+        "Fender warns that year ranges typically overlap because of transition periods and neck or complete-instrument carryover.",
+        "The late-2009 10-prefix Mexico transition format is excluded because Fender says the serial body does not identify country of origin and requires the headstock decal.",
+        "MSN, MSZ, pre-2010 MX artist-model exceptions, AMXN shared U.S./Mexico California Series instruments, and other special cases are excluded until separate scoped flows exist."
+      ],
+      "product_boundary": [
+        "May support approximate Mexican-made Fender production-year-range lookup by official serial pattern.",
+        "Must not claim authentication, exact production date, exact model identity, valuation, warranty eligibility, or country of origin outside the scoped prefix evidence."
+      ]
+    },
+    {
+      "id": "fender_indonesia_product_dating",
+      "name": "How can I find out when my Indonesian-made instrument was manufactured?",
+      "publisher": "Fender Musical Instruments Corporation",
+      "url": "https://support.fender.com/hc/en-us/articles/42521692859163-How-can-I-find-out-when-my-Indonesian-made-instrument-was-manufactured",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-27",
+      "use": "Authority for scoped Indonesian-made Fender IC and ICF prefix production-date ranges.",
+      "scope_notes": [
+        "Use only the IC08, IC09, ICF09, IC10, ICF10, and ICF11 serial formats explicitly charted on Fender's Indonesian-made support article.",
+        "Fender says the remaining six digits are a unit identifier, are not sequential, and do not provide further identification information.",
+        "Fender warns that numbers for each year typically overlap by a few months because of transition periods and serial-numbered inventory carryover.",
+        "The post-2012 serial-location guidance is excluded from analyzer rules because it is not a serial-to-date table."
+      ],
+      "product_boundary": [
+        "May support approximate Indonesian-made Fender production-year-range lookup by official IC or ICF prefix pattern.",
+        "Must not claim authentication, exact production date, exact model identity, valuation, warranty eligibility, ownership, or country of origin outside the scoped prefix evidence."
+      ]
+    },
+    {
+      "id": "fender_japan_product_dating",
+      "name": "How can I find out when my Japanese-made instrument was manufactured?",
+      "publisher": "Fender Musical Instruments Corporation",
+      "url": "https://support.fender.com/hc/en-us/articles/42521710053275-How-can-I-find-out-when-my-Japanese-made-instrument-was-manufactured",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-27",
+      "use": "Authority for Japanese-made Fender serial context requirements and future Japan-specific dating rules.",
+      "scope_notes": [
+        "Fender warns that records on early Japanese-made instruments are not complete and serial numbers are a guide only.",
+        "Many Japanese-made letter prefixes overlap other Fender serial families and require Made in Japan or Crafted in Japan decal context.",
+        "JD plus eight digits requires Made in Japan decal context and has 2012 transition-period exceptions.",
+        "Use this source for context-required guidance only until the analyzer has explicit country/decal intake."
+      ],
+      "product_boundary": [
+        "May support non-decoding context guidance for possible Japanese-made Fender serials.",
+        "Must not return a Japanese production year, exact model identity, authentication, valuation, warranty eligibility, ownership, or country of origin without reviewed context intake."
+      ]
+    },
+    {
+      "id": "collings_faq_serial_numbers",
+      "name": "Collings FAQ: Serial Number Questions",
+      "publisher": "Collings Guitars",
+      "url": "https://collingsguitars.com/support/faq/",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-26",
+      "use": "Authority for Collings electric serial format and acoustic ship-date contact guidance.",
+      "scope_notes": [
+        "Use the official electric serial structure: general series/model designation, two-digit production-start year, and category sequence.",
+        "Official examples include 290181443 and I35LC232197.",
+        "Production-start year is not necessarily ship year.",
+        "Acoustic exact ship-date information requires contacting Collings with the serial number."
+      ],
+      "product_boundary": [
+        "May support descriptive Collings electric production-start year, model-prefix hint, and category sequence parsing.",
+        "May support records-assisted Collings acoustic lookup guidance without returning an acoustic production year.",
+        "Must not claim authentication, exact model identity, exact ship date, legal status, ownership, or value."
+      ]
+    },
+    {
+      "id": "suhr_warranty_registration",
+      "name": "Suhr Warranty Registration",
+      "publisher": "Suhr",
+      "url": "https://www.suhr.com/support/warranty-registration/",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-26",
+      "use": "Retired research authority kept for provenance only; Suhr serial numbers are part of registration/warranty context, not a public decoding rule.",
+      "scope_notes": [
+        "No official public Suhr serial-decoding rule is encoded in AMG Decoder.",
+        "Reviewed official Suhr support/warranty-registration surfaces did not provide a reusable serial-to-year or serial-to-model rule.",
+        "Suhr is retired from the product surface until a source-backed public serial rule is reviewed.",
+        "Keep Suhr out of analyzer-enabled brand IDs and read-only UI rows."
+      ],
+      "product_boundary": [
+        "Must not infer Suhr production year, model, authenticity, warranty eligibility, ownership, or value from serial number alone."
+      ]
+    },
+    {
+      "id": "novo_warranty",
+      "name": "Novo Warranty",
+      "publisher": "Novo Guitars",
+      "url": "https://www.novoguitars.com/pages/warranty",
+      "source_tier": "official",
+      "last_reviewed": "2026-06-26",
+      "use": "Retired research authority kept for provenance only; Novo serial numbers matter for warranty context, not a public decoding rule.",
+      "scope_notes": [
+        "No official public Novo serial-decoding rule is encoded in AMG Decoder.",
+        "Reviewed official Novo warranty/product/dealer surfaces did not provide a reusable serial-to-year or serial-to-model rule.",
+        "Dealer examples remain research leads only and are not production rules.",
+        "Novo is retired from the product surface until a source-backed public serial rule is reviewed.",
+        "Keep Novo out of analyzer-enabled brand IDs and read-only UI rows."
+      ],
+      "product_boundary": [
+        "Must not infer Novo production year, model, authenticity, warranty eligibility, ownership, or value from serial number alone."
+      ]
+    }
+  ]
+}

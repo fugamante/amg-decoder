@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMG Decoder</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to analyzer</a>
+    <div class="app-shell">
+      <aside class="brand-rail" aria-label="Brand launchpad">
+        <div class="brand-mark">
+          <span>AMG</span>
+          <span>Decoder</span>
+        </div>
+        <nav class="brand-list" aria-describedby="brand-status-note" data-brand-list></nav>
+        <p id="brand-status-note" class="rail-note">Enabled brands use scoped source-backed rules and fixtures; unavailable families remain excluded until reviewed.</p>
+      </aside>
+
+      <main id="main" class="workspace" tabindex="-1">
+        <header class="topbar">
+          <div>
+            <h1 data-brand-title>Martin serial analyzer</h1>
+            <p data-brand-subtitle>Standard guitar and ukulele production-year lookup.</p>
+          </div>
+          <div class="scope-chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-6 4 12 2-6h4"/></svg>
+            Official source
+          </div>
+        </header>
+
+        <section class="analyzer-panel" aria-label="Brand analyzer" data-analyzer-panel>
+          <form class="serial-form" data-analyzer-form>
+            <label for="serial">Serial number</label>
+            <div class="input-row">
+              <input id="serial" name="serial" inputmode="numeric" autocomplete="off" placeholder="Enter serial number" aria-describedby="serial-help" data-serial-input>
+              <button type="submit">Analyze</button>
+            </div>
+            <p id="serial-help" class="field-help" data-serial-help>Digits only for Martin standard guitar and ukulele lookup.</p>
+          </form>
+          <div class="sample-row" aria-label="Sample serials" data-sample-row>
+            <button type="button" data-sample="2935987" aria-label="Use supported sample serial 2935987">Supported</button>
+            <button type="button" data-sample="900001" aria-label="Use Sigma-Martin quarantine sample serial 900001">Quarantine</button>
+            <button type="button" data-sample="3043481" aria-label="Use above-table sample serial 3043481">Above table</button>
+          </div>
+        </section>
+
+        <div class="result-region" data-result-region role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+
+        <section class="scope-strip" aria-label="Martin scope" data-scope-strip>
+          <div>
+            <span>Scope</span>
+            <strong data-scope-primary>Standard guitars and ukuleles</strong>
+          </div>
+          <div>
+            <span data-scope-secondary-label>Current table</span>
+            <strong data-scope-secondary>1898-2025</strong>
+          </div>
+          <div>
+            <span data-scope-tertiary-label>Separate tables</span>
+            <strong data-scope-tertiary>LX, Backpacker, mandolin, ukulele variants</strong>
+          </div>
+        </section>
+
+        <footer class="product-foot">
+          <span>Reviewed source data: 2026-06-23</span>
+          <span>Serial results do not establish authenticity, model identity, or value.</span>
+        </footer>
+      </main>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -11,7 +11,7 @@ Purpose: compare American-made guitar serialization coverage for Fender, PRS, Ma
 | Martin | Excellent | One-field serial lookup plus optional model/origin check. | Production year by official serial range. |
 | PRS | Strong | Ask line/family before parsing serial. | Approximate production year and family-specific sequence. |
 | Collings | Split | Ask acoustic/electric first. | Electric start year and sequence; acoustic format check plus lookup guidance. |
-| Fender | Useful but guided | Ask origin, model/series, serial location, and serial. | Likely year/range with strong ambiguity warnings. |
+| Fender | Scoped U.S. implemented | Ask origin, model/series, serial location, and serial for future non-U.S. flows. | U.S. likely year/range with strong ambiguity warnings. |
 | Novo | Limited | Ask serial, model, series, and COA/dealer context. | Observed format and possible year, not official decoding. |
 
 The easiest path for users is not the same for every brand. Martin can be nearly frictionless. PRS needs one extra question. Collings needs an acoustic/electric split. Fender needs guided context to avoid misleading answers. Novo should be framed as record-assisted research because no official public decoder was found.
@@ -21,7 +21,7 @@ The easiest path for users is not the same for every brand. Martin can be nearly
 1. Martin: easiest and most deterministic.
 2. PRS: strong official documentation, moderate UI context needed.
 3. Collings: excellent for electrics, limited official year decoding for acoustics.
-4. Fender: high demand, but must be guided to handle overlap.
+4. Fender: first U.S.-made module implemented; continue with guided subflows to handle overlap.
 5. Novo: useful boutique support, but lower-confidence unless backed by records.
 
 ## Brand Coverage Details
@@ -56,6 +56,14 @@ Analyzer should return:
 - Unsupported result for Sigma/Goya/import cases or serials above the current official table.
 
 Recommended implementation tier: first AMG module after Gibson stabilization.
+
+Readiness artifact status:
+
+- Canonical data path: `data/brands/martin/ranges.json`.
+- Source registry entry: `data/source-registry.json#martin_serial_lookup`.
+- Fixture path: `data/fixtures/martin_standard_guitars_ukuleles.json`.
+- Contract doc: `docs/martin-standard-ranges.md`.
+- Validation command: `python3 scripts/validate_data.py`.
 
 ### PRS
 
@@ -95,6 +103,15 @@ Implementation warning:
 - Flag official-table anomalies instead of silently correcting them.
 
 Recommended implementation tier: second AMG module.
+
+Readiness artifact status:
+
+- Canonical data path: `data/brands/prs/rules.json`.
+- Source registry entry: `data/source-registry.json#prs_year_identification`.
+- Fixture path: `data/fixtures/prs_set_neck_rules.json`.
+- Contract doc: `docs/prs-set-neck-ranges.md`.
+- Implemented scope: set-neck and S2. CE, SE, EG, Swamp Ash, bass, acoustic, amplifier, and cabinet flows remain separate future work.
+- Validation command: `npm test`.
 
 ### Collings
 
@@ -143,7 +160,7 @@ Core rule:
 - Early numeric, `L`, CBS-era, `S`, `E`, `V`, `N`, `Z`, `DZ`, `10`, and `USYY` schemes all need separate handling.
 - Fender explicitly warns that serial ranges overlap and that modular production makes serial-only dating approximate.
 - `USYY + 6 digits` is the strongest modern U.S. path, beginning around March 2010.
-- `V` serials identify American Vintage-style candidates, but generally do not decode to a specific year without neck-date context.
+- `V` serials identify American Vintage-style candidates, but do not decode to a specific year without neck-date context.
 
 Best UI:
 
@@ -161,11 +178,38 @@ Analyzer should return:
 
 Implementation warning:
 
-- Fender should be a guided flow, not a universal regex.
+- Fender should remain guided by subflow, not a universal regex. The first U.S.-made subflow is implemented.
 - Do not classify a missing Fender lookup result as counterfeit evidence.
 - Do not force exact years for overlapping ranges.
 
 Recommended implementation tier: fourth AMG module, after easier deterministic modules are stable.
+
+### Suhr
+
+Sources:
+
+- `https://www.suhr.com/support/warranty-registration/`
+- `https://www.suhr.com/contact/`
+- `https://www.suhr.com/custom-gallery/`
+
+Core rule:
+
+- No official public Suhr serial decoder was found.
+- Official Suhr registration/contact surfaces can use serial numbers as records context, but they do not publish a reusable serial-to-year or serial-to-model rule.
+- Official gallery/product examples may show individual instruments and serial numbers, but individual records are not a general decoding rule.
+
+Best UI:
+
+- Keep Suhr read-only as research guidance until manufacturer-backed serial structure is reviewed.
+- If enabled later, use a records-assisted flow that asks for serial, model, purchase/listing context, and photos/source evidence.
+
+Analyzer should return:
+
+- Nothing production-facing yet. Do not infer year, model, warranty eligibility, authenticity, or value from Suhr serial alone.
+
+Implementation warning:
+
+- Dealer or gallery examples are not enough to build a production decoder. They can only seed a future reviewed evidence table if each row has source attribution and the UI labels it as records-assisted research.
 
 ### Novo
 
@@ -212,7 +256,7 @@ Analyzer should return:
 Implementation warning:
 
 - Novo should not be presented as a definitive decoder.
-- It should be a structured research helper: normalize serial, identify likely convention, and tell the user what additional evidence matters.
+- It should remain read-only until a product decision explicitly accepts a low-confidence, dealer-evidence-only research helper. Any such helper must label dealer evidence separately from official sources and avoid year/model conclusions in the primary result.
 
 Recommended implementation tier: fifth AMG module.
 
@@ -277,7 +321,7 @@ Build AMG Decoder in this order:
 1. Martin: fastest high-confidence win.
 2. PRS: high-value, official, but needs family selection.
 3. Collings electric: clean official rule once acoustic/electric split exists.
-4. Fender modern U.S.: begin with `USYY`, `10`, `Z`, `DZ`, then expand backward.
+4. Fender modern and historical U.S.: implemented for `USYY`, `10`, `Z`, `DZ`, V-prefix context guidance, S/E/N, numeric, and L-prefix scoped rules.
 5. Collings acoustic: format validation plus lookup guidance.
 6. Novo: observed-format helper with clear non-official confidence.
 7. Fender vintage/odd cases: add incrementally with strong warnings and fixture coverage.
@@ -292,7 +336,7 @@ Avoid expanding AMG in every UI surface. The subtitle can clarify scope:
 
 ## Open Questions
 
-- Should Gibson remain in AMG Decoder, or become a separate legacy/import-capable module because Gibson serialization includes USA, Custom Shop, Memphis, acoustic, and Epiphone-adjacent behavior?
+- Which Gibson exception family should be next after the official guitar-scope and Epiphone modules: artist signature, Dobro, banjo, or undocumented exceptions?
 - Should Taylor be included despite not being in this American-made research batch? Taylor is American-made for much of the relevant product line and has excellent official serial documentation.
 - Should Fender Custom Shop be a separate module from Fender USA production?
 - Should Collings acoustic use secondary range estimates at all, or only official lookup guidance?

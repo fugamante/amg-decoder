@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "brand": "Gibson",
+  "source_id": "gibson_serial_search",
+  "last_reviewed": "2026-06-23",
+  "implemented_scope": "official_gibson_guitar_formats",
+  "model_year_codes": {
+    "0": "1960 LP Standard or LP Special Double Cut",
+    "4": "1954 LP Standard or LP Custom",
+    "5": "1955 LP Standard",
+    "6": "1956 LP Standard",
+    "7": "1957 LP Standard, LP Custom, LP Jr Single Cut, or LP Special Single Cut",
+    "8": "1958 LP Standard, LP Jr Double Cut, Korina Flying V, or Korina Explorer",
+    "9": "1959 LP Standard"
+  },
+  "impressed_model_codes": {
+    "1": "1961 SG Standard",
+    "2": "1962 SG Standard or SG Custom",
+    "3": "1963 SG Custom, SG Special, SG Junior, or Firebird",
+    "4": "1964 SG Standard",
+    "5": "1965 Non-Reverse Firebird",
+    "7": "1967 Flying V",
+    "8": "1968 LP Custom or LP Standard"
+  },
+  "es_label_codes": {
+    "A8": "1958 ES-335",
+    "A9": "1959 ES Models"
+  },
+  "rules": [
+    {
+      "id": "gibson.usa_1977_2005.ydddyrrr",
+      "label": "Gibson USA/Acoustic/Memphis 8-digit date format",
+      "format": "YDDDYRRR",
+      "confidence": "high",
+      "decoded_fields": ["production_year", "day_of_year", "rank"]
+    },
+    {
+      "id": "gibson.usa_2005_2014_2019_present.ydddybrrr",
+      "label": "Gibson USA 9-digit date and batch format",
+      "format": "YDDDYBRRR",
+      "confidence": "high",
+      "decoded_fields": ["production_year", "day_of_year", "batch", "rank"]
+    },
+    {
+      "id": "gibson.usa_2014_mid_2019.yyrrrrrrr",
+      "label": "Gibson USA 2014-mid 2019 model-year format",
+      "format": "YYRRRRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["production_year", "production_number"]
+    },
+    {
+      "id": "gibson.centennial_1994.94rrrrrr",
+      "label": "Gibson 1994 Centennial serial format",
+      "format": "94RRRRRR",
+      "confidence": "high",
+      "decoded_fields": ["production_year", "production_number"]
+    },
+    {
+      "id": "gibson.les_paul_classic.1989_2014",
+      "label": "Gibson Les Paul Classic serial exception",
+      "format": "Y RRR, YRRR, RRRR, or YYRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["production_year", "production_year_digit", "sequence"]
+    },
+    {
+      "id": "gibson.custom_shop.modern_csyrrrr",
+      "label": "Gibson Custom Shop modern CS serial format",
+      "format": "CSYRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["production_year_digit", "sequence"]
+    },
+    {
+      "id": "gibson.custom_shop.reissue.myrrrr",
+      "label": "Gibson Custom Shop reissue ink-stamped format",
+      "format": "M YRRR or MYRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["model_year", "production_year_digit", "sequence"]
+    },
+    {
+      "id": "gibson.custom_shop.reissue.yrrrrm",
+      "label": "Gibson Custom Shop impressed reissue format",
+      "format": "YRRRRM",
+      "confidence": "medium",
+      "decoded_fields": ["model_hint", "production_year_digit", "sequence"]
+    },
+    {
+      "id": "gibson.custom_shop.es_label.a8_a9",
+      "label": "Gibson Custom Shop ES label format",
+      "format": "A8YRRRR or A9YRRRR",
+      "confidence": "medium",
+      "decoded_fields": ["model_hint", "production_year_digit", "sequence"]
+    },
+    {
+      "id": "gibson.custom_shop.carved_top.ydddyrrr",
+      "label": "Gibson Custom Shop carved-top date format",
+      "format": "YDDDYRRR",
+      "confidence": "high",
+      "decoded_fields": ["production_year", "day_of_year", "sequence"]
+    }
+  ],
+  "warnings": [
+    "Gibson serial lookup describes documented serial-format facts and does not authenticate an instrument.",
+    "Custom Shop last-digit year formats expose only the documented year digit unless the decade is supported by separate authority.",
+    "Artist signature, Epiphone, Dobro, banjo, and undocumented exception formats are not enabled in this Gibson module."
+  ]
+}
