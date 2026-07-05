@@ -36,7 +36,7 @@ Initial launchpad candidates:
 
 | Brand | Coverage | Tier | Launchpad note |
 | --- | --- | --- | --- |
-| Gibson | electric/acoustic/custom | Scoped | Official Gibson guitar formats are implemented; artist signature, Epiphone, Dobro, banjo, and undocumented exceptions need separate flows. |
+| Gibson | electric/acoustic/custom | Scoped | Official Gibson guitar formats are implemented; artist signature, Dobro, banjo, and undocumented exceptions need separate flows. Epiphone is tracked as its own scoped analyzer. |
 | Taylor | acoustic/electric-acoustic | High | Modern rules can produce factory, start date, and daily sequence. |
 | Martin | acoustic/ukulele | High | Serial maps cleanly to production year by range. |
 | PRS | electric/acoustic/bass | High | Official prefix/range rules, with some decade ambiguity on early prefixes. |

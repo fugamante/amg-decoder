@@ -14,8 +14,8 @@ Research rule: prefer official manufacturer support pages. Use community or thir
 | 2 | Martin | High | Official serial lookup maps serial ranges to production years. |
 | 3 | PRS | High | Official support page provides prefix and serial range tables. |
 | 4 | Gretsch | Mixed | Official product dating page exists, but older eras need label/location context. |
-| 5 | Fender | Scoped | Official U.S.-made Fender support rules are implemented; non-U.S. and special-family flows remain separate. |
-| 6 | Gibson | Scoped | Official Gibson guitar serial rules are implemented; signature, Epiphone, Dobro, banjo, and undocumented exceptions remain separate. |
+| 5 | Fender | Scoped | Official U.S.-made, Mexican-made, Indonesian-made, and Japan-context Fender support rules are implemented; remaining regional and special-family flows stay separate. |
+| 6 | Gibson | Scoped | Official Gibson guitar serial rules are implemented; signature, Dobro, banjo, and undocumented exceptions remain separate. Epiphone is tracked as its own scoped analyzer. |
 | 7 | Takamine | Research | Official German page documents two codes for Japan-built instruments, but exclusions need handling. |
 | 8 | Epiphone | Scoped | Gibson official page covers scoped Epiphone guitar formats; factory-name mapping remains excluded. |
 | 9 | Ibanez | Research | Strong community reference, but no single unified official format. |

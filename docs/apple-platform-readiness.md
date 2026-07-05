@@ -285,7 +285,7 @@ Do not add a production bundle identifier, signing team, provisioning profile, A
 - No production bundle identifier, signing entitlements, archive workflow, final icon set, or App Store metadata exists yet.
 - The public distribution name, approved bundle identifier, icon set, signing team, privacy answers, App Store listing fields, archive/export method, and repository/folder rename plan need one explicit compatibility pass before shipping.
 - The committed Xcode project produces local installable app bundles for macOS, iPhone simulator, and iPad simulator. iPhone simulator smoke validation, compact iPhone UI assertions, iPad UI assertions, macOS resize/app-window UI assertions, static macOS accessibility-label contracts, and macOS Command-Return analyzer assertions exist, but broader macOS Tab-order traversal, runtime accessibility-mode checks, and archive/signing workflows are still needed for shipping workflows.
-- Gibson artist signature, Epiphone, Dobro, banjo, and undocumented exception formats remain unsupported pending scoped authority review.
+- Gibson artist signature, Dobro, banjo, and undocumented exception formats remain unsupported pending scoped authority review.
 - Fender Japan date decoding, Custom Shop, Korea, acoustic, amplifier, export, special-run, Mexico exception, and Indonesia post-2012 flows remain unsupported pending scoped authority review.
 - PRS CE, SE, EG, Swamp Ash, bass, acoustic, amplifier, and cabinet flows remain unsupported pending scoped authority review.
 - Taylor and Martin extensions require new official-source fixtures before implementation.
