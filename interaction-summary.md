@@ -1,4 +1,4 @@
-# Gibson Decoder Interaction Summary
+# Legacy Gibson Prototype Interaction Summary
 
 Date: 2026-05-02
 

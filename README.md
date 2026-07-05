@@ -6,7 +6,7 @@ The project direction is to move beyond a single Gibson-focused decoder into a d
 
 ## Naming Status
 
-`AMG Decoder` is the canonical product name and `amg-decoder` is the intended public repository slug. The current local folder name may still refer to the original Gibson Decoder prototype, but new product, package, app, and documentation surfaces should use AMG Decoder unless they are explicitly describing legacy Gibson-only artifacts.
+`AMG Decoder` is the canonical product name and `amg-decoder` is the intended public repository slug. New product, package, app, and documentation surfaces should use AMG Decoder unless they are explicitly describing legacy Gibson-only artifacts.
 
 Do not rename the local folder, repository remote, Swift package, app bundle, or generated artifacts as a side effect of feature work. Treat any remaining filesystem or distribution rename as a separate compatibility pass with validation for scripts, package metadata, native bundle identifiers, and public repository hygiene.
 

@@ -16,7 +16,7 @@ An `Unknown / Not Sure` path can exist later, but it should be secondary and cle
 
 ## Naming Boundary
 
-Use `AMG Decoder` as the canonical product name and `amg-decoder` as the intended public repository slug. Treat `Gibson Decoder` as a legacy workspace/prototype label only.
+Use `AMG Decoder` as the canonical product name and `amg-decoder` as the intended public repository slug. Treat earlier Gibson-only naming as legacy prototype context only.
 
 Any remaining filesystem, remote repository, Xcode workspace, bundle identifier, or distribution rename should be handled as its own compatibility pass. That pass must update references together, validate scripts and package metadata, and preserve public repository hygiene.
 

@@ -19,7 +19,7 @@ AMG Decoder now has a SwiftPM-first native foundation plus a committed local Xco
 
 ## Naming Boundary
 
-`AMG Decoder` is the canonical product name for Apple-platform planning. The current local workspace may still use the original Gibson Decoder folder name, but app display names, package naming, metadata drafts, and public-facing docs should use AMG Decoder.
+`AMG Decoder` is the canonical product name for Apple-platform planning. App display names, package naming, metadata drafts, and public-facing docs should use AMG Decoder.
 
 Do not replace the local-only Xcode bundle identifiers, add signing-team metadata, create an App Store record, or rename the repository until the exact display name, production bundle identifier, signing team, icon set, and public repository slug are confirmed together.
 
