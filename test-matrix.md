@@ -1,4 +1,4 @@
-# Gibson Decoder Test Matrix
+# Legacy Gibson Prototype Test Matrix
 
 Source: local polished Gibson serial-number rules document.
 

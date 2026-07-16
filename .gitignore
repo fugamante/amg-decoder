@@ -1,5 +1,16 @@
 .DS_Store
 *.swp
 *.tmp
+node_modules/
 build/
 DerivedData/
+.build/
+.swiftpm/
+.codex/
+dist/
+*.xcarchive/
+*.ipa
+*.dSYM/
+ExportOptions.plist
+*.mobileprovision
+*.provisionprofile

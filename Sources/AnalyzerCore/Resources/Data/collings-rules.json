@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "brand": "Collings",
+  "source_id": "collings_faq_serial_numbers",
+  "last_reviewed": "2026-06-26",
+  "implemented_scope": "electric_serials_and_acoustic_guidance",
+  "electric_prefixes": [
+    "I35LC",
+    "SOCOLC",
+    "290DC",
+    "ESCL",
+    "I35",
+    "SOCO",
+    "290",
+    "CL"
+  ],
+  "rules": [
+    {
+      "id": "collings.electric.prefix_yy_sequence",
+      "label": "Collings electric prefix, production-start year, and category sequence",
+      "confidence": "high"
+    },
+    {
+      "id": "collings.acoustic.records_assisted",
+      "label": "Collings acoustic records-assisted lookup guidance",
+      "confidence": "unsupported"
+    }
+  ],
+  "warnings": [
+    "Collings electric serials identify a general series or model designation, production-start year, and category sequence from the official FAQ.",
+    "Collings says electric production-start year is not necessarily the ship year.",
+    "Collings says acoustic exact ship-date information requires contacting Collings with the serial number.",
+    "Serial lookup does not authenticate an instrument, identify its exact model, or establish value."
+  ]
+}

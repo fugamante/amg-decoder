@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "brand": "Epiphone",
+  "source_id": "gibson_epiphone_serial_search",
+  "cases": [
+    {
+      "id": "epiphone_pre_2008_two_letter_factory",
+      "input": { "serial": "EE04091234" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "epiphone.regular_production.pre_2008.factory_yymm_rank",
+        "decoded": {
+          "production_year": 2004,
+          "production_month": 9,
+          "factory_code": "EE",
+          "rank": 1234
+        }
+      }
+    },
+    {
+      "id": "epiphone_pre_2008_one_letter_factory",
+      "input": { "serial": "S06081234" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "epiphone.regular_production.pre_2008.factory_yymm_rank",
+        "decoded": {
+          "production_year": 2006,
+          "production_month": 8,
+          "factory_code": "S",
+          "rank": 1234
+        }
+      }
+    },
+    {
+      "id": "epiphone_elite_elitist",
+      "input": { "serial": "T31234" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "epiphone.elite_elitist.fyssss",
+        "decoded": {
+          "production_year": 2003,
+          "factory_code": "T",
+          "series_hint": "Elite or Elitist",
+          "sequence": 1234
+        }
+      }
+    },
+    {
+      "id": "epiphone_numeric_2008_present",
+      "input": { "serial": "0809123456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "epiphone.numeric_2008_present.yymmrrrrrr",
+        "decoded": {
+          "production_year": 2008,
+          "production_month": 9,
+          "rank": 123456
+        }
+      }
+    },
+    {
+      "id": "epiphone_reject_invalid_month",
+      "input": { "serial": "EE04131234" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "epiphone_reject_factory_name_claim",
+      "input": { "serial": "QINGDAO04091234" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    }
+  ]
+}

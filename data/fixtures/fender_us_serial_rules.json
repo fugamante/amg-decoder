@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "brand": "Fender",
+  "source_id": "fender_us_product_dating",
+  "cases": [
+    {
+      "id": "fender_us_1964_l_prefix",
+      "input": { "serial": "L23456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.us_1950_1976.serial_ranges",
+        "decoded": {
+          "production_year_range": "1964",
+          "range_start": 20000,
+          "range_end": 49999
+        }
+      }
+    },
+    {
+      "id": "fender_us_1976_numeric",
+      "input": { "serial": "650000" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.us_1950_1976.serial_ranges",
+        "decoded": {
+          "production_year_range": "1976",
+          "range_start": 500000,
+          "range_end": 700000
+        }
+      }
+    },
+    {
+      "id": "fender_us_s9_overlap",
+      "input": { "serial": "S912345" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.us_1976_1999.s_e_n_prefixes",
+        "decoded": {
+          "production_year_range": "1978-1981",
+          "prefix": "S9",
+          "sequence": 12345
+        }
+      }
+    },
+    {
+      "id": "fender_us_dz_deluxe",
+      "input": { "serial": "DZ512345" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.us_2000_2009.z_dz_prefixes",
+        "decoded": {
+          "production_year_range": "2005",
+          "prefix": "DZ5",
+          "series_hint": "American Deluxe",
+          "sequence": 12345
+        }
+      }
+    },
+    {
+      "id": "fender_us_ten_prefix",
+      "input": { "serial": "10 1234567" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.us_late_2009_2010.ten_prefix",
+        "decoded": {
+          "production_year_range": "late 2009-March 2010",
+          "sequence": 1234567
+        }
+      }
+    },
+    {
+      "id": "fender_us_current_prefix",
+      "input": { "serial": "US17123456" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "fender.us_2010_present.us_prefix",
+        "decoded": {
+          "production_year": 2017,
+          "prefix": "US17",
+          "unit_identifier": 123456
+        }
+      }
+    },
+    {
+      "id": "fender_us_v_prefix_context",
+      "input": { "serial": "V12345" },
+      "expected": {
+        "confidence": "low",
+        "matched_rule": "fender.us_vintage_series.v_prefix",
+        "decoded": {
+          "production_year_range": "1982-present",
+          "series_hint": "U.S. Vintage Series or American Vintage candidate",
+          "sequence": 12345,
+          "required_context": "neck heel production date"
+        }
+      }
+    },
+    {
+      "id": "fender_mx_mn_prefix",
+      "input": { "serial": "MN512345" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.mx_1990_2009.mn_mz_prefixes",
+        "source_id": "fender_mexico_product_dating",
+        "decoded": {
+          "production_year_range": "1995-1996",
+          "prefix": "MN5",
+          "country_scope": "Mexican-made Fender instrument",
+          "sequence": 12345
+        }
+      }
+    },
+    {
+      "id": "fender_mx_mz_prefix",
+      "input": { "serial": "MZ8123456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.mx_1990_2009.mn_mz_prefixes",
+        "source_id": "fender_mexico_product_dating",
+        "decoded": {
+          "production_year_range": "2008-2009",
+          "prefix": "MZ8",
+          "country_scope": "Mexican-made Fender instrument",
+          "sequence": 123456
+        }
+      }
+    },
+    {
+      "id": "fender_mx_mx_prefix",
+      "input": { "serial": "MX17123456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.mx_2010_2017.mx_prefix",
+        "source_id": "fender_mexico_product_dating",
+        "decoded": {
+          "production_year_range": "2017-2018",
+          "prefix": "MX17",
+          "country_scope": "Mexican-made Fender instrument",
+          "unit_identifier": 123456
+        }
+      }
+    },
+    {
+      "id": "fender_id_ic_prefix",
+      "input": { "serial": "IC09123456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.id_2008_2012.ic_icf_prefixes",
+        "source_id": "fender_indonesia_product_dating",
+        "decoded": {
+          "production_year_range": "2009-2010",
+          "prefix": "IC09",
+          "country_scope": "Indonesian-made Fender instrument",
+          "factory_scope": "Cort factory",
+          "unit_identifier": 123456
+        }
+      }
+    },
+    {
+      "id": "fender_id_icf_prefix",
+      "input": { "serial": "ICF10123456" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "fender.id_2008_2012.ic_icf_prefixes",
+        "source_id": "fender_indonesia_product_dating",
+        "decoded": {
+          "production_year_range": "2010-2011",
+          "prefix": "ICF10",
+          "country_scope": "Indonesian-made Fender instrument",
+          "factory_scope": "Cort factory",
+          "unit_identifier": 123456
+        }
+      }
+    },
+    {
+      "id": "fender_reject_mexico_transition_decal_scope",
+      "input": { "serial": "10 12345678" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "fender_reject_unreviewed_non_us_scope",
+      "input": { "serial": "KOR12123456" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "fender_reject_indonesia_post_2012_location_scope",
+      "input": { "serial": "ICF12123456" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "fender_jp_jd_context_required",
+      "input": { "serial": "JD12123456" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "fender.jp_2012_present.jd_context_required",
+        "source_id": "fender_japan_product_dating",
+        "decoded": {
+          "prefix": "JD12",
+          "serial_location": "Made in Japan serial number decal",
+          "required_context": "Confirm Made in Japan decal and 2012 transition-period context before dating."
+        }
+      }
+    }
+  ]
+}

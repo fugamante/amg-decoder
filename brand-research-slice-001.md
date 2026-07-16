@@ -14,10 +14,10 @@ Research rule: prefer official manufacturer support pages. Use community or thir
 | 2 | Martin | High | Official serial lookup maps serial ranges to production years. |
 | 3 | PRS | High | Official support page provides prefix and serial range tables. |
 | 4 | Gretsch | Mixed | Official product dating page exists, but older eras need label/location context. |
-| 5 | Fender | Mixed | Official support has extensive dating material, but Fender warns serials overlap and are not definitive. |
-| 6 | Gibson | Mixed | Official modern Gibson/Epiphone page exists; current project focuses on Gibson Custom Shop rules from a local document. |
+| 5 | Fender | Scoped | Official U.S.-made, Mexican-made, Indonesian-made, and Japan-context Fender support rules are implemented; remaining regional and special-family flows stay separate. |
+| 6 | Gibson | Scoped | Official Gibson guitar serial rules are implemented; signature, Dobro, banjo, and undocumented exceptions remain separate. Epiphone is tracked as its own scoped analyzer. |
 | 7 | Takamine | Research | Official German page documents two codes for Japan-built instruments, but exclusions need handling. |
-| 8 | Epiphone | Research | Gibson official page covers some Epiphone behavior; factory-code detail is mostly non-official. |
+| 8 | Epiphone | Scoped | Gibson official page covers scoped Epiphone guitar formats; factory-name mapping remains excluded. |
 | 9 | Ibanez | Research | Strong community reference, but no single unified official format. |
 | 10 | Yamaha | Research | Guitar-specific official material is hard to pin down; third-party summaries describe many systems. |
 
@@ -46,6 +46,14 @@ Likely output fields:
 - Older range year.
 
 Implementation note: Taylor should be the first non-Gibson brand.
+
+Readiness artifact status:
+
+- Canonical data path: `data/brands/taylor/rules.json`.
+- Source registry entry: `data/source-registry.json#taylor_serial_decode`.
+- Fixture path: `data/fixtures/taylor_serial_rules.json`.
+- Contract doc: `docs/taylor-serial-rules.md`.
+- Validation command: `npm test`.
 
 ### Martin
 
@@ -114,7 +122,7 @@ Sources:
 
 Official Fender support documents serial locations and product dating, but warns that modular production and overlapping serial ranges make serial-only dating imprecise.
 
-Analyzer fit: high demand, mixed confidence.
+Analyzer fit: high demand; first U.S.-made instrument scope is implemented with medium/high confidence depending on rule precision.
 
 Likely output fields:
 
@@ -123,7 +131,7 @@ Likely output fields:
 - Serial location.
 - Explicit overlap warning.
 
-Implementation note: Fender should not be a single broad parser. Use subflows such as `US`, `Mexico`, `Japan`, `Korea`, `Squier`, and `Acoustic` when source coverage is good enough.
+Implementation note: Fender should not be a single broad parser. The first U.S.-made instrument subflow is implemented; add `Mexico`, `Japan`, `Korea`, `Squier`, `Acoustic`, Custom Shop, and special-run flows only when source coverage is good enough.
 
 ### Gibson
 
@@ -133,7 +141,7 @@ Official Gibson documentation covers modern Gibson USA, Gibson Acoustic, Gibson 
 
 Current local project source: local polished Gibson serial-number rules document.
 
-Analyzer fit: already in scope, but must be stabilized.
+Analyzer fit: first official Gibson guitar scope is implemented; remaining exceptions need separate source-backed flows.
 
 Known local defects from `interaction-summary.md`:
 
@@ -141,7 +149,7 @@ Known local defects from `interaction-summary.md`:
 - `A-38005` can crash.
 - Some carved-top examples are misparsed.
 
-Implementation note: repair Gibson before using it as the template for the rest of the analyzer.
+Implementation note: do not use the old C++ prototype as a production authority. Use the official Gibson data artifact and fixtures as the checked contract.
 
 ### Takamine
 
@@ -168,7 +176,7 @@ Sources:
 
 Gibson official documentation mentions Epiphone behavior, including all-numeric serials around 2008. Detailed factory-code mappings are mostly from community references.
 
-Analyzer fit: useful, but source-sensitive.
+Analyzer fit: useful, with the first Gibson-documented guitar formats implemented.
 
 Likely output fields:
 
@@ -177,7 +185,7 @@ Likely output fields:
 - Ranking/sequence.
 - Source confidence warning.
 
-Implementation note: split official Gibson-sourced rules from community-sourced factory-code rules.
+Implementation note: keep official Gibson-sourced Epiphone rules separate from community-sourced factory-code name mappings.
 
 ### Ibanez
 

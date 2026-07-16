@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "brand": "Gibson",
+  "source_id": "gibson_serial_search",
+  "cases": [
+    {
+      "id": "gibson_usa_1998_8_digit",
+      "input": { "serial": "91418009" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "gibson.usa_1977_2005.ydddyrrr",
+        "decoded": { "production_year": 1998, "day_of_year": 141, "rank": 9 }
+      }
+    },
+    {
+      "id": "gibson_usa_2005_9_digit",
+      "input": { "serial": "000450002" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "gibson.usa_2005_2014_2019_present.ydddybrrr",
+        "decoded": { "production_year": 2005, "day_of_year": 4, "batch": 0, "rank": 2 }
+      }
+    },
+    {
+      "id": "gibson_usa_2015_model_year",
+      "input": { "serial": "150012345" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "gibson.usa_2014_mid_2019.yyrrrrrrr",
+        "decoded": { "production_year": 2015, "production_number": 12345 }
+      }
+    },
+    {
+      "id": "gibson_centennial_1994",
+      "input": { "serial": "94123456" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "gibson.centennial_1994.94rrrrrr",
+        "decoded": { "production_year": 1994, "production_number": 123456 }
+      }
+    },
+    {
+      "id": "gibson_custom_shop_cs",
+      "input": { "serial": "CS10845" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "gibson.custom_shop.modern_csyrrrr",
+        "decoded": { "production_year_digit": 1, "sequence": 845 }
+      }
+    },
+    {
+      "id": "gibson_custom_reissue_space",
+      "input": { "serial": "7 5123" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "gibson.custom_shop.reissue.myrrrr",
+        "decoded": {
+          "model_year": 1957,
+          "model_hint": "1957 LP Standard, LP Custom, LP Jr Single Cut, or LP Special Single Cut",
+          "production_year_digit": 5,
+          "sequence": 123
+        }
+      }
+    },
+    {
+      "id": "gibson_custom_es_label",
+      "input": { "serial": "A830005" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "gibson.custom_shop.es_label.a8_a9",
+        "decoded": { "model_hint": "1958 ES-335", "production_year_digit": 3, "sequence": 5 }
+      }
+    },
+    {
+      "id": "gibson_reject_signature",
+      "input": { "serial": "ACE 123" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "gibson.signature.excluded",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "gibson_reject_invalid_day",
+      "input": { "serial": "93679001" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    }
+  ]
+}

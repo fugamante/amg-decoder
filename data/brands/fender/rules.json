@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "brand": "Fender",
+  "source_id": "fender_us_product_dating",
+  "last_reviewed": "2026-06-27",
+  "implemented_scope": "us_mexico_indonesia_made_instruments_with_japan_context_guidance",
+  "rules": [
+    {
+      "id": "fender.us_1950_1976.serial_ranges",
+      "label": "Fender U.S. early serial range chart",
+      "format": "numeric_or_l_prefix_range",
+      "confidence": "medium",
+      "ranges": [
+        { "pattern": "numeric", "range_start": 1, "range_end": 6000, "year_range": "1950-1954" },
+        { "pattern": "numeric", "range_start": 6001, "range_end": 10000, "year_range": "1954-1956" },
+        { "pattern": "numeric", "range_start": 10000, "range_end": 19999, "year_range": "1955-1957" },
+        { "pattern": "numeric", "range_start": 20000, "range_end": 29999, "year_range": "1957-1958" },
+        { "pattern": "numeric", "range_start": 30000, "range_end": 39999, "year_range": "1958-1959" },
+        { "pattern": "numeric", "range_start": 40000, "range_end": 49999, "year_range": "1959-1960" },
+        { "pattern": "numeric", "range_start": 50000, "range_end": 69999, "year_range": "1960-1962" },
+        { "pattern": "numeric", "range_start": 70000, "range_end": 89999, "year_range": "1961-1963" },
+        { "pattern": "numeric", "range_start": 90000, "range_end": 99999, "year_range": "1963" },
+        { "pattern": "l_prefix", "range_start": 10000, "range_end": 19999, "year_range": "1963" },
+        { "pattern": "l_prefix", "range_start": 20000, "range_end": 49999, "year_range": "1964" },
+        { "pattern": "l_prefix", "range_start": 50000, "range_end": 99999, "year_range": "1965" },
+        { "pattern": "numeric", "range_start": 100000, "range_end": 199999, "year_range": "1965-1967" },
+        { "pattern": "numeric", "range_start": 200000, "range_end": 299999, "year_range": "1968-1970" },
+        { "pattern": "numeric", "range_start": 300000, "range_end": 399999, "year_range": "1971-1973" },
+        { "pattern": "numeric", "range_start": 400000, "range_end": 499999, "year_range": "1973-1975" },
+        { "pattern": "numeric", "range_start": 500000, "range_end": 700000, "year_range": "1976" }
+      ],
+      "decoded_fields": ["production_year_range", "range_start", "range_end"]
+    },
+    {
+      "id": "fender.us_1976_1999.s_e_n_prefixes",
+      "label": "Fender U.S. S/E/N prefix serial chart",
+      "format": "decade_prefix_plus_digits",
+      "confidence": "medium",
+      "prefix_year_ranges": {
+        "S6": "1976",
+        "S7": "1977-1978",
+        "S8": "1977-1978",
+        "S9": "1978-1981",
+        "E0": "1979-1981",
+        "E1": "1980-1981",
+        "E2": "1982-1983",
+        "E3": "1982-1985",
+        "E4": "1984-1988",
+        "E8": "1988-1989",
+        "E9": "1989-1990",
+        "N0": "1990-1991",
+        "N1": "1991-1992",
+        "N2": "1992-1993",
+        "N3": "1993-1994",
+        "N4": "1994-1995",
+        "N5": "1995-1996",
+        "N6": "1996-1997",
+        "N7": "1997-1998",
+        "N8": "1998-1999",
+        "N9": "1990 or 1999"
+      },
+      "decoded_fields": ["production_year_range", "prefix", "sequence"]
+    },
+    {
+      "id": "fender.us_2000_2009.z_dz_prefixes",
+      "label": "Fender U.S. Z/DZ prefix serial chart",
+      "format": "z_or_dz_prefix_plus_digits",
+      "confidence": "medium",
+      "decoded_fields": ["production_year_range", "prefix", "series_hint", "sequence"]
+    },
+    {
+      "id": "fender.us_late_2009_2010.ten_prefix",
+      "label": "Fender U.S. short-lived 10-prefix serial format",
+      "format": "10 + space + 7 digits",
+      "confidence": "medium",
+      "decoded_fields": ["production_year_range", "sequence"]
+    },
+    {
+      "id": "fender.us_2010_present.us_prefix",
+      "label": "Fender U.S. US-prefix serial format",
+      "format": "USYY + 6 digits",
+      "confidence": "high",
+      "decoded_fields": ["production_year", "prefix", "unit_identifier"]
+    },
+    {
+      "id": "fender.us_vintage_series.v_prefix",
+      "label": "Fender U.S. Vintage Series V-prefix format",
+      "format": "V + 4, 5, or 6 digits",
+      "confidence": "low",
+      "decoded_fields": ["production_year_range", "series_hint", "sequence", "required_context"]
+    },
+    {
+      "id": "fender.mx_1990_2009.mn_mz_prefixes",
+      "source_id": "fender_mexico_product_dating",
+      "label": "Fender Mexico MN/MZ prefix serial chart",
+      "format": "MN or MZ decade prefix plus 5 or 6 digits",
+      "confidence": "medium",
+      "prefix_year_ranges": {
+        "MN0": "1990-1991",
+        "MN1": "1991-1992",
+        "MN2": "1992-1993",
+        "MN3": "1993-1994",
+        "MN4": "1994-1995",
+        "MN5": "1995-1996",
+        "MN6": "1996-1997",
+        "MN7": "1997-1998",
+        "MN8": "1998-1999",
+        "MN9": "1999-2000",
+        "MZ0": "2000-2001",
+        "MZ1": "2001-2002",
+        "MZ2": "2002-2003",
+        "MZ3": "2003-2004",
+        "MZ4": "2004-2005",
+        "MZ5": "2005-2006",
+        "MZ6": "2006-2007",
+        "MZ7": "2007-2008",
+        "MZ8": "2008-2009",
+        "MZ9": "2009-2010"
+      },
+      "decoded_fields": ["production_year_range", "prefix", "country_scope", "sequence"]
+    },
+    {
+      "id": "fender.mx_2010_2017.mx_prefix",
+      "source_id": "fender_mexico_product_dating",
+      "label": "Fender Mexico MX-prefix serial chart",
+      "format": "MXYY + 6 digits",
+      "confidence": "medium",
+      "prefix_year_ranges": {
+        "MX10": "2010-2011",
+        "MX11": "2011-2012",
+        "MX12": "2012-2013",
+        "MX13": "2013-2014",
+        "MX14": "2014-2015",
+        "MX15": "2015-2016",
+        "MX16": "2016-2017",
+        "MX17": "2017-2018"
+      },
+      "decoded_fields": ["production_year_range", "prefix", "country_scope", "unit_identifier"]
+    },
+    {
+      "id": "fender.id_2008_2012.ic_icf_prefixes",
+      "source_id": "fender_indonesia_product_dating",
+      "label": "Fender Indonesia IC/ICF prefix serial chart",
+      "format": "IC or ICF year prefix plus 6 digits",
+      "confidence": "medium",
+      "prefix_year_ranges": {
+        "IC08": "2008-2009",
+        "IC09": "2009-2010",
+        "ICF09": "2009-2010",
+        "IC10": "2010-2011",
+        "ICF10": "2010-2011",
+        "ICF11": "2011-2012"
+      },
+      "decoded_fields": ["production_year_range", "prefix", "country_scope", "factory_scope", "unit_identifier"]
+    },
+    {
+      "id": "fender.jp_2012_present.jd_context_required",
+      "source_id": "fender_japan_product_dating",
+      "label": "Fender Japan JD-prefix context required",
+      "format": "JDYY + 6 digits with Made in Japan decal context",
+      "confidence": "unsupported",
+      "decoded_fields": ["prefix", "serial_location", "required_context"]
+    }
+  ],
+  "warnings": [
+    "Fender states serial-number dating is not always precisely definitive because of modular production and overlapping ranges.",
+    "This Fender module only covers scoped U.S.-made, Mexican-made, and Indonesian-made instrument serial schemes plus Japan context-required guidance from official Fender support pages.",
+    "Fender says V-prefix American Vintage instruments require neck-heel production date context for a specific year; Japan date decoding, Custom Shop, Korea, acoustic, amplifier, export, special-run, and Mexico exception serials need separate scoped flows.",
+    "Fender says Mexican-made and Indonesian-made serial ranges typically overlap because of transition periods and neck or complete-instrument carryover."
+  ]
+}

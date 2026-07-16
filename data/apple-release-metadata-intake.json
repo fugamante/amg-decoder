@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "product": "AMG Decoder",
+  "slug": "amg-decoder",
+  "status": "metadata_required",
+  "policy": {
+    "localOnlyUntilComplete": true,
+    "doNotCreateReleaseArtifacts": true,
+    "descriptiveOnlyBoundary": true
+  },
+  "sections": [
+    {
+      "id": "identity",
+      "title": "Product identity",
+      "requiredBefore": "bundle_id_or_app_store_record",
+      "fields": [
+        {
+          "id": "approved_display_name",
+          "label": "Approved App Store display name",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "production_bundle_id_ios",
+          "label": "Production iOS/iPadOS bundle identifier",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "production_bundle_id_macos",
+          "label": "Production macOS bundle identifier",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "app_store_sku",
+          "label": "App Store SKU",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "copyright_holder",
+          "label": "Copyright holder",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "signing",
+      "title": "Signing and provisioning",
+      "requiredBefore": "archive_or_distribution_build",
+      "fields": [
+        {
+          "id": "apple_developer_team_id",
+          "label": "Apple Developer Team ID",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "provisioning_strategy",
+          "label": "Provisioning strategy",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "distribution_certificate_policy",
+          "label": "Distribution certificate policy",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "entitlements_and_capabilities",
+          "label": "Approved entitlements and capabilities",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy and data use",
+      "requiredBefore": "privacy_manifest_or_app_store_privacy_answers",
+      "fields": [
+        {
+          "id": "privacy_policy_url",
+          "label": "Privacy Policy URL",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "app_store_privacy_answers",
+          "label": "App Store privacy answers",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "required_reason_api_review",
+          "label": "Required-reason API review",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "privacy_manifest_decision",
+          "label": "Privacy manifest decision",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "third_party_sdk_privacy_review",
+          "label": "Third-party SDK privacy review",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "assets",
+      "title": "Final assets",
+      "requiredBefore": "final_icon_or_store_screenshots",
+      "fields": [
+        {
+          "id": "app_icon_source_artwork",
+          "label": "Approved app icon source artwork",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "app_icon_review_owner",
+          "label": "App icon review owner",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "launch_asset_decision",
+          "label": "Launch asset decision",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "app_store_screenshot_policy",
+          "label": "App Store screenshot policy",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "store_listing",
+      "title": "Store listing",
+      "requiredBefore": "app_store_submission",
+      "fields": [
+        {
+          "id": "subtitle",
+          "label": "Subtitle",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "description",
+          "label": "Description",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "keywords",
+          "label": "Keywords",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "support_url",
+          "label": "Support URL",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "age_rating",
+          "label": "Age rating answers",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "content_rights",
+          "label": "Content rights declaration",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "archive_export",
+      "title": "Archive and export",
+      "requiredBefore": "archive_workflow",
+      "fields": [
+        {
+          "id": "distribution_channel",
+          "label": "Distribution channel",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "archive_scheme_policy",
+          "label": "Archive scheme policy",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "export_method",
+          "label": "Export method",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "export_options_owner",
+          "label": "Export options owner",
+          "status": "pending_product_decision",
+          "value": null
+        },
+        {
+          "id": "mac_notarization_decision",
+          "label": "macOS notarization decision",
+          "status": "pending_product_decision",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "blockedUntilAllFieldsReviewed": true
+}

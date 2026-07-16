@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "brand": "Taylor",
+  "source_id": "taylor_serial_decode",
+  "cases": [
+    {
+      "id": "taylor_current_official_example",
+      "input": { "serial": "1107064001" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.current_10_digit.2009_present",
+        "decoded": {
+          "factory": "El Cajon, California, USA",
+          "start_date": "2014-07-06",
+          "sequence": 1
+        }
+      }
+    },
+    {
+      "id": "taylor_current_mexico_factory",
+      "input": { "serial": "2107064001" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.current_10_digit.2009_present",
+        "decoded": {
+          "factory": "Tecate, Baja California, Mexico",
+          "start_date": "2014-07-06",
+          "sequence": 1
+        }
+      }
+    },
+    {
+      "id": "taylor_current_reject_before_start",
+      "input": { "serial": "1001019001" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "taylor.current_10_digit.2009_present",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "taylor_current_reject_unknown_factory",
+      "input": { "serial": "3107064001" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "taylor.current_10_digit.2009_present",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "taylor_nine_digit_official_example",
+      "input": { "serial": "980311301" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.nine_digit.1993_1999",
+        "decoded": {
+          "start_date": "1998-03-11",
+          "series": "Baby or Big Baby",
+          "series_code": "3",
+          "sequence": 1
+        }
+      }
+    },
+    {
+      "id": "taylor_eleven_digit_official_example",
+      "input": { "serial": "20070311301" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.eleven_digit.2000_2009",
+        "decoded": {
+          "start_date": "2007-03-11",
+          "series": "Baby or Big Baby",
+          "series_code": "3",
+          "sequence": 1
+        }
+      }
+    },
+    {
+      "id": "taylor_eleven_digit_reject_after_end",
+      "input": { "serial": "20091101301" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "taylor.eleven_digit.2000_2009",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "taylor_four_prefix_1991_boundary",
+      "input": { "serial": "4-1121" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.four_prefix_410.1991_1992",
+        "decoded": {
+          "production_year": 1991,
+          "sequence": 1121
+        }
+      }
+    },
+    {
+      "id": "taylor_four_prefix_1992_boundary",
+      "input": { "serial": "4-1122" },
+      "expected": {
+        "confidence": "high",
+        "matched_rule": "taylor.four_prefix_410.1991_1992",
+        "decoded": {
+          "production_year": 1992,
+          "sequence": 1122
+        }
+      }
+    },
+    {
+      "id": "taylor_pre_1993_range",
+      "input": { "serial": "15250" },
+      "expected": {
+        "confidence": "medium",
+        "matched_rule": "taylor.pre_1993_ranges",
+        "decoded": {
+          "production_year": 1992,
+          "range_start": 15250,
+          "range_end": 17947
+        }
+      }
+    },
+    {
+      "id": "taylor_reject_invalid_date",
+      "input": { "serial": "991331301" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "taylor.nine_digit.1993_1999",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "taylor_reject_empty",
+      "input": { "serial": "" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    },
+    {
+      "id": "taylor_reject_unmatched",
+      "input": { "serial": "abcdef" },
+      "expected": {
+        "confidence": "unsupported",
+        "matched_rule": "input.invalid_serial",
+        "decoded": {}
+      }
+    }
+  ]
+}

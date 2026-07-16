@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "product": "AMG Decoder",
+  "slug": "amg-decoder",
+  "status": "asset_metadata_required",
+  "blockedUntilAllItemsApproved": true,
+  "policy": {
+    "doNotAddFinalArtwork": true,
+    "doNotCreateReleaseArtifacts": true,
+    "descriptiveOnlyBoundary": true,
+    "captureScreenshotsFromRealAppUI": true
+  },
+  "assetGroups": [
+    {
+      "id": "app_icon_source_artwork",
+      "title": "App icon source artwork",
+      "status": "pending_product_decision",
+      "requiredBefore": "AppIcon.appiconset",
+      "acceptance": [
+        "Approved product-owned source artwork is supplied before icon generation.",
+        "Artwork reviewer or owner is named before the asset pass.",
+        "Light, Dark, and Tinted appearance support is explicitly accepted or deferred.",
+        "The icon source is not a generated analyzer screenshot or unsupported brand claim."
+      ],
+      "forbiddenUntilApproved": [
+        "AppIcon.appiconset",
+        "ASSETCATALOG_COMPILER_APPICON_NAME",
+        ".icon"
+      ]
+    },
+    {
+      "id": "app_icon_asset_catalog",
+      "title": "App icon asset catalog generation",
+      "status": "blocked_pending_source_artwork",
+      "requiredBefore": "Xcode app icon build setting",
+      "acceptance": [
+        "Generated app icon renditions are derived from approved source artwork.",
+        "The Xcode project sets ASSETCATALOG_COMPILER_APPICON_NAME only in a dedicated asset pass.",
+        "The existing AccentColor asset remains valid after icon generation.",
+        "Generated icon files are reviewed before they are committed."
+      ],
+      "forbiddenUntilApproved": [
+        "AppIcon.appiconset",
+        "ASSETCATALOG_COMPILER_APPICON_NAME"
+      ]
+    },
+    {
+      "id": "launch_asset_decision",
+      "title": "Launch asset decision",
+      "status": "pending_product_decision",
+      "requiredBefore": "final launch experience",
+      "acceptance": [
+        "The release owner decides whether to use default SwiftUI launch behavior or a product-owned launch asset.",
+        "Any launch asset is derived from approved product artwork, not screenshots or analyzer output.",
+        "The decision is validated on iPhone, iPad, and macOS before release packaging."
+      ],
+      "forbiddenUntilApproved": [
+        "custom launch artwork",
+        "release launch storyboard assets"
+      ]
+    },
+    {
+      "id": "app_store_screenshot_policy",
+      "title": "App Store screenshot policy",
+      "status": "pending_product_decision",
+      "requiredBefore": "App Store screenshot capture",
+      "acceptance": [
+        "Screenshots are captured from real AMG Decoder app UI.",
+        "The screenshot set covers iPhone, iPad, and macOS if those platforms are included in distribution.",
+        "The screenshot set includes reviewed Light and Dark appearance decisions.",
+        "Visible analyzer results preserve the descriptive-only boundary and show source attribution where applicable.",
+        "No screenshot text implies authentication, model identity, value, ownership, warranty eligibility, or unsupported serial coverage."
+      ],
+      "forbiddenUntilApproved": [
+        "App Store screenshots",
+        "screenshot marketing copy",
+        "release screenshot export"
+      ]
+    }
+  ]
+}
